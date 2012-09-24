@@ -1,3 +1,8 @@
 <p data-role="welcome">
-  Welcome to the todos app!
+Welcome to the todos app!
 </p>
+<%= form_for :session, url: session_path do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit "Sign In" %>
+<% end %>
