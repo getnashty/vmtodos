@@ -5,4 +5,8 @@ class CompletionsController < ApplicationController
     redirect_to todos_path
   end
 
+  def destroy
+    current_user.todos.find(params[:todo_id]).update_column :completed_at, nil
+    redirect_to todos_path
+  end
 end
