@@ -19,3 +19,20 @@ describe Todo, '#completed?' do
     expect(todo).to_not be_completed
   end
 end
+
+describe Todo, '#mark_complete' do
+  it 'returns true when completed_at is set' do
+    todo = Todo.new
+    todo.mark_complete
+    expect(todo).to be_completed
+  end
+end
+
+describe Todo, '#mark_incomplete' do
+  it 'returns true false completed_at is nil' do
+    todo = Todo.new
+    todo.mark_complete
+    todo.mark_incomplete
+    expect(todo).to_not be_completed
+  end
+end
